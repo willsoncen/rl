@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net version="1.9" xmlns="http://sumo.dlr.de/xsd/net_file.xsd">
+    <!-- 十字路口定义 -->
+    <location netOffset="0.00,0.00" convBoundary="-500.00,-500.00,500.00,500.00" origBoundary="-500.00,-500.00,500.00,500.00" projParameter="!"/>
+    
+    <!-- 节点定义 -->
+    <junction id="center" type="traffic_light" x="0.00" y="0.00" incLanes="north_in south_in east_in west_in" intLanes=":center_0_0 :center_1_0 :center_2_0 :center_3_0" shape="-3.20,3.20 3.20,3.20 3.20,-3.20 -3.20,-3.20">
+        <request index="0" response="0000" foes="1010"/>
+        <request index="1" response="0101" foes="0101"/>
+        <request index="2" response="0000" foes="1010"/>
+        <request index="3" response="0101" foes="0101"/>
+    </junction>
+    
+    <!-- 边定义 -->
+    <edge id="north_in" from="north" to="center" priority="1" numLanes="2" speed="13.89">
+        <lane index="0" width="3.20" shape="0.00,500.00 0.00,3.20"/>
+        <lane index="1" width="3.20" shape="3.20,500.00 3.20,3.20"/>
+    </edge>
+    
+    <!-- 其他边的定义... -->
+    
+    <!-- 连接定义 -->
+    <connection from="north_in" to="south_out" fromLane="1" toLane="1" via=":center_0_0" tl="center" linkIndex="0" dir="s" state="o"/>
+    <!-- 其他连接的定义... -->
+    
+    <!-- 信号灯定义 -->
+    <tlLogic id="center" type="static" programID="0" offset="0">
+        <phase duration="31" state="GGrrGGrr"/>
+        <phase duration="4"  state="yyrryyrr"/>
+        <phase duration="31" state="rrGGrrGG"/>
+        <phase duration="4"  state="rryyrryy"/>
+    </tlLogic>
+</net>

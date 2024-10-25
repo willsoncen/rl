@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <!-- 车辆类型定义 -->
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="15" color="1,1,0"/>
+    
+    <!-- 路线定义 -->
+    <route id="route_ns" edges="north_in south_out"/>
+    <route id="route_sn" edges="south_in north_out"/>
+    <route id="route_ew" edges="east_in west_out"/>
+    <route id="route_we" edges="west_in east_out"/>
+    <route id="route_ne" edges="north_in east_out"/>
+    <route id="route_nw" edges="north_in west_out"/>
+    <route id="route_se" edges="south_in east_out"/>
+    <route id="route_sw" edges="south_in west_out"/>
+    <route id="route_en" edges="east_in north_out"/>
+    <route id="route_es" edges="east_in south_out"/>
+    <route id="route_wn" edges="west_in north_out"/>
+    <route id="route_ws" edges="west_in south_out"/>
+    
+    <!-- 车流生成 -->
+    <flow id="flow_ns" type="car" route="route_ns" begin="0" end="3600" probability="0.1"/>
+    <flow id="flow_sn" type="car" route="route_sn" begin="0" end="3600" probability="0.1"/>
+    <flow id="flow_ew" type="car" route="route_ew" begin="0" end="3600" probability="0.1"/>
+    <flow id="flow_we" type="car" route="route_we" begin="0" end="3600" probability="0.1"/>
+    <flow id="flow_ne" type="car" route="route_ne" begin="0" end="3600" probability="0.05"/>
+    <flow id="flow_nw" type="car" route="route_nw" begin="0" end="3600" probability="0.05"/>
+    <flow id="flow_se" type="car" route="route_se" begin="0" end="3600" probability="0.05"/>
+    <flow id="flow_sw" type="car" route="route_sw" begin="0" end="3600" probability="0.05"/>
+    <flow id="flow_en" type="car" route="route_en" begin="0" end="3600" probability="0.05"/>
+    <flow id="flow_es" type="car" route="route_es" begin="0" end="3600" probability="0.05"/>
+    <flow id="flow_wn" type="car" route="route_wn" begin="0" end="3600" probability="0.05"/>
+    <flow id="flow_ws" type="car" route="route_ws" begin="0" end="3600" probability="0.05"/>
+</routes>

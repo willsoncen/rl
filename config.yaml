@@ -1,0 +1,21 @@
+controllers:
+  high_level:
+    algorithm: DQN
+    hidden_size:
+    - 256
+    - 256
+  low_level:
+    algorithm: TD3
+    hidden_size:
+    - 400
+    - 300
+  mid_level:
+    algorithm: DDPG
+    hidden_size:
+    - 400
+    - 300
+training:
+  batch_size: 64
+  cuda_enabled: true
+  epochs: 1000
+  learning_rate: 0.001
